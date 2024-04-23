@@ -1,7 +1,8 @@
 #!/bin/bash
-apt update -y
+sudo apt update -y
 #instalar dependencias
 
+sudo apt install git -y
 sudo apt install make -y
 sudo apt install build-essential -y
 sudo apt install autoconf -y
@@ -36,15 +37,25 @@ wget https://nginx.org/download/nginx-1.24.0.tar.gz
 tar -zxvf nginx-1.24.0.tar.gz
 rm nginx-1.24.0.tar.gz
 
+
 #instalacion de mod security
 cd /usr/local/src/
 sudo git clone https://github.com/owasp-modsecurity/ModSecurity
 cd ModSecurity
+
 sudo ./build.sh
 sudo ./configure
-sudo git submodule.init
+sudo git init
+
+sudo git submodule update
+sudo git init
+sudo git submodule update
+sudo git submodule init
 sudo git submodule update 
+
+
 sudo ./configure
+echo joder
 make
 make install
 cd /usr/local/src/
@@ -58,6 +69,11 @@ echo " edita el archivo /etc/nginx/nginx.conf"
 echo "añadiendo load_module modules/ngx_http_modsecurity_module.so; y en http  añade modsecurity on; y modsecurity_rules_file /etc/nginx/modsec/modsec-config.conf;"
 echo "te hago una copia por si las moscas " 
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx_backup.conf
+cd /etc/nginx
+variable=
+sudo sed -i '3a load_module modules/ngx_http_modsecurity_module.so;' nginx.conf
+sudo sed -i '17a\	modsecurity on;' nginx.conf
+sudo sed -i '18 a\      \ \ modsecurity_rules_file /etc/nginx/modsec/modsec-config.conf;' nginx.conf
 sudo mkdir /etc/nginx/modsec/
 sudo cp /usr/local/src/ModSecurity/modsecurity.conf-recommended /etc/nginx/modsec/modsecurity.conf
 echo pues ya estaria 
