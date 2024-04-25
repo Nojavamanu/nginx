@@ -18,7 +18,7 @@ echo "                             _______  _______ _________ _______  _        
 \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/     |/    )_)(_______)(____/   |/     \|   \_/   |/     \|\/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/"                                                                          
                                                
 comandos_exitosos=""
-numero_comandos_exitosos=0
+
 
 print_output=""
 sudo apt update -y
