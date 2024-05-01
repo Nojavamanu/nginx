@@ -18,6 +18,7 @@ echo "                             _______  _______ _________ _______  _        
 \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/     |/    )_)(_______)(____/   |/     \|   \_/   |/     \|\/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/"                                                                          
                                                
 comandos_exitosos=""
+numero_comandos_exitosos=0
 
 
 print_output=""
@@ -25,6 +26,7 @@ sudo apt update -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+="update hecho"
 else
@@ -39,6 +41,7 @@ sudo apt install git -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",git instalado"
 else
@@ -49,6 +52,7 @@ sudo apt install make -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",make instalado"
 else
@@ -59,6 +63,7 @@ sudo apt install build-essential -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",build essential instalado"
 else
@@ -71,6 +76,7 @@ sudo apt install autoconf -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",autoconf instalado"
 else
@@ -83,6 +89,7 @@ sudo apt install automake -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",automake instalado"
 else
@@ -95,6 +102,7 @@ sudo apt install doxygen -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",doxygen instalado"
 else
@@ -107,6 +115,7 @@ sudo apt install libtool -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",libtool instalado"
 else
@@ -120,6 +129,7 @@ sudo apt install pkg-config -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",pkg config instalado"
 else
@@ -133,6 +143,7 @@ sudo apt install libcurl4-openssl-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",libcurl4-openssl-dev instalado "
 else
@@ -146,6 +157,7 @@ sudo apt install liblua5.3-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=",liblua5.3-dev instalado"
 else
@@ -159,7 +171,7 @@ sudo apt install libfuzzy-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=",libfuzzy-dev instalado"
 else
 
@@ -172,6 +184,7 @@ sudo apt install ssdeep -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=", ssdeep instalado"
 else
@@ -185,6 +198,7 @@ sudo apt install gettext -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=", gettext instalado"
 else
@@ -198,7 +212,7 @@ sudo apt install libpcre3-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=", libpcre3-dev instalado"
 else
 
@@ -211,6 +225,7 @@ sudo apt install libxml2 -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=", libxml2 instalado"
 else
@@ -224,6 +239,7 @@ sudo apt install libxml2-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=", libxml2-dev instalado"
 else
@@ -237,6 +253,7 @@ sudo apt install libcurl4 -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=", libcurl4 instalado"
 else
@@ -250,6 +267,7 @@ sudo apt install libgeoip-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 
 print_output+=", libgeoip-dev instalado"
 else
@@ -263,7 +281,7 @@ sudo apt install libyajl-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=", libyajl-dev instalado"
 else
 
@@ -276,7 +294,7 @@ sudo apt install htop -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=", htop  instalado"
 else
 
@@ -289,7 +307,7 @@ sudo add-apt-repository ppa:ondrej/nginx -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="repositorio añadido "
 else
 
@@ -302,7 +320,7 @@ sudo apt update -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="update hecho"
 else
 
@@ -315,7 +333,7 @@ sudo apt install zlib1g -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="zlib1g instalado"
 else
 
@@ -329,7 +347,7 @@ sudo apt install zlib1g-dev -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=", zlib1g-dev instalado"
 else
 
@@ -342,7 +360,7 @@ sudo apt install nginx-core nginx-common nginx nginx-full -y
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=",nginx-core nginx-common nginx nginx-full instalado"
 else
 
@@ -361,7 +379,7 @@ wget https://nginx.org/download/nginx-1.24.0.tar.gz
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="codigo fuente descargado "
 else
 
@@ -374,7 +392,7 @@ tar -zxvf nginx-1.24.0.tar.gz
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="descomprimido archivo"
 else
 
@@ -389,7 +407,7 @@ rm nginx-1.24.0.tar.gz
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="borrado archivo comprimido"
 else
 
@@ -406,7 +424,7 @@ cd /usr/local/src/
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="clonado mod security"
 else
 
@@ -424,7 +442,7 @@ cd ModSecurity
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="submodule init  hecho"
 
 else
@@ -439,7 +457,7 @@ fi
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=",submodule update  hecho"
 
 else
@@ -454,7 +472,7 @@ fi
   comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="build ejecutado "
 else
 
@@ -469,7 +487,7 @@ fi
   comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="configure ejecutado "
 else
 
@@ -484,7 +502,7 @@ make
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="make  hecho"
 else
 
@@ -498,7 +516,7 @@ make install
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="install  hecho"
 else
 
@@ -513,7 +531,7 @@ sudo git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="clonado modsecurity nginx "
 else
 
@@ -529,7 +547,7 @@ sudo ./configure --add-dynamic-module=/usr/local/src/ModSecurity-nginx --with-co
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="modulo añadido de forma dinamica"
 else
 
@@ -543,7 +561,7 @@ make modules
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=",modulo compilado "
 else
 
@@ -558,7 +576,7 @@ fi
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="modulo copiado"
 else
 
@@ -577,7 +595,7 @@ fi
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="backup  nginx.conf hecho "
 else
 
@@ -595,7 +613,7 @@ cd /etc/nginx
   comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="linea load_module modules/ngx_http_modsecurity_module.so;' nginx.conf añadida"
 else
 
@@ -607,7 +625,7 @@ print_output+=",linea load_module modules/ngx_http_modsecurity_module.so;' nginx
   comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="linea modsecurity on;' nginx.conf añadida"
 else
 
@@ -618,7 +636,7 @@ print_output+=",linea modsecurity on;' nginx.conf no añadida"
    comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="linea modsecurity_rules_file /etc/nginx/modsec/modsecurity.conf;' nginx.conf añadida"
 else
 
@@ -629,7 +647,7 @@ print_output+=",linea modsecurity_rules_file /etc/nginx/modsec/modsecurity.conf;
 comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="directorio nginx modsec creado "
 else
 
@@ -640,7 +658,7 @@ cp /usr/local/src/ModSecurity/modsecurity.conf-recommended /etc/nginx/modsec/mod
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="backup  modsecurity.conf hecho "
 else
 
@@ -650,7 +668,7 @@ sed -i '277d' /etc/nginx/modsec/modsecurity.conf
  comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+="linea 277 modsecurity .conf eliminada "
 else
 
@@ -661,13 +679,21 @@ fi
   comandos_exitosos=$?
 if [ $comandos_exitosos -eq 0 ]
 then
-
+((numero_comandos_exitosos = $numero_comandos_exitosos +1))
 print_output+=",nginx reiniciado "
 else
 
 print_output+=",nginx no reiniciado "
 fi
-
+if [ $numero_comandos_exitosos -eq 48 ]
+then
+echo $numero_comandos_exitosos pasos completados con exito 
 echo $print_output
+else
+echo ha habido errores en alguno de estos pasos
+echo $print_output
+fi
 
-echo pues ya estaria 
+
+
+
